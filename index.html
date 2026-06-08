@@ -134,6 +134,52 @@
   }
   .pill .ic{font-size:18px}
 
+  /* example pricing box */
+  .example{
+    max-width:420px;margin:28px auto 0;background:var(--cream);
+    border:1px solid rgba(35,75,50,.12);border-radius:16px;padding:22px 24px;text-align:left;
+  }
+  .ex-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;font-size:16px;color:var(--ink)}
+  .ex-row.free .ex-val{color:var(--gold);font-weight:700;text-transform:uppercase;font-size:14px;letter-spacing:.04em}
+  .ex-row.free .ex-lbl{color:#7a8a7e;text-decoration:line-through;text-decoration-color:rgba(122,138,126,.5)}
+  .ex-val{font-weight:600}
+  .ex-total{display:flex;justify-content:space-between;align-items:center;margin-top:10px;padding-top:14px;border-top:1px dashed rgba(35,75,50,.25)}
+  .ex-total span{font-weight:600;color:var(--navy)}
+  .ex-total strong{font-family:'Anton',sans-serif;font-size:30px;color:var(--navy)}
+  .ex-note{margin-top:12px;font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:var(--green);text-align:center}
+  .ex-note b{font-style:normal;font-weight:600}
+
+  /* scarcity badge */
+  .scarcity{
+    display:inline-flex;align-items:center;gap:8px;margin-top:22px;
+    background:rgba(232,165,33,.14);border:1px solid rgba(232,165,33,.4);
+    color:#a9741a;font-weight:600;font-size:14px;padding:9px 18px;border-radius:100px;
+  }
+  .scarcity .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:blink 1.6s infinite}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+  /* trust bar */
+  .trust{max-width:880px;margin:40px auto 0;padding:0 24px;display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+  .trust-item{
+    display:flex;align-items:center;gap:10px;background:var(--white);
+    border:1px solid rgba(35,75,50,.08);border-radius:14px;padding:14px 22px;
+    box-shadow:0 14px 30px -22px var(--shadow);font-weight:600;color:var(--navy);font-size:15px;
+  }
+  .trust-item .big{font-family:'Anton',sans-serif;font-size:26px;color:var(--gold);line-height:1}
+  .trust-item .ti-ic{font-size:22px}
+
+  /* photo gallery */
+  .gallery{max-width:980px;margin:80px auto 0;padding:0 24px}
+  .gallery-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:14px;height:420px}
+  .ph{
+    border-radius:18px;overflow:hidden;background:linear-gradient(135deg,#cdd9cb,#aebfa9);
+    position:relative;display:flex;align-items:center;justify-content:center;
+  }
+  .ph:nth-child(1){grid-row:1/3}
+  .ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .ph .ph-ph{color:#5e6f5c;font-size:13px;text-align:center;padding:12px;font-weight:500}
+  .ph .ph-cap{position:absolute;left:12px;bottom:12px;background:rgba(19,39,27,.7);color:#fff;font-size:12px;padding:5px 12px;border-radius:8px;backdrop-filter:blur(4px)}
+
   /* ====== HOW IT WORKS ====== */
   .how{max-width:980px;margin:90px auto 0;padding:0 24px;text-align:center}
   .section-kicker{font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:12px}
@@ -217,6 +263,10 @@
     .grid2{grid-template-columns:1fr}
     .steps{grid-template-columns:1fr}
     .eq-sign{font-size:48px}
+    .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,140px);height:auto}
+    .ph:nth-child(1){grid-row:1/2;grid-column:1/3}
+    .trust{flex-direction:column;align-items:stretch}
+    .trust-item{justify-content:center}
   }
 </style>
 </head>
@@ -253,13 +303,29 @@
       </div>
     </div>
     <p class="offer-explain">Réservez <b>2 semaines</b> dans l'un de nos appartements et ne payez que la première. Idéal pour <b>2 familles</b> qui partagent le séjour, ou pour de longues vacances à prix doux.</p>
+
+    <div class="example">
+      <div class="ex-row"><span class="ex-lbl">Appartement T2 · semaine d'août</span><span class="ex-val">655 €</span></div>
+      <div class="ex-row free"><span class="ex-lbl">2ᵉ semaine</span><span class="ex-val">offerte</span></div>
+      <div class="ex-total"><span>2 semaines de vacances</span><strong>655 €</strong></div>
+      <p class="ex-note">Soit <b>1 310 €</b> de séjour pour le prix d'une seule semaine.</p>
+    </div>
+
     <div class="pills">
       <span class="pill"><span class="ic">👨‍👩‍👧‍👦</span> 2 familles</span>
       <span class="pill"><span class="ic">📅</span> 2 semaines</span>
       <span class="pill"><span class="ic">💛</span> 1 seule offre</span>
       <span class="pill"><span class="ic">🏔️</span> Au cœur du Val d'Allos</span>
     </div>
+    <div class="scarcity"><span class="dot"></span> Nombre d'appartements limité à ce tarif</div>
   </div>
+</section>
+
+<!-- TRUST BAR -->
+<section class="trust reveal">
+  <div class="trust-item"><span class="big">3★</span> Résidence de tourisme</div>
+  <div class="trust-item"><span class="ti-ic">👨‍👩‍👧‍👦</span> Label <b style="margin-left:4px">Famille Plus</b></div>
+  <div class="trust-item"><span class="big">86%</span> de clients satisfaits</div>
 </section>
 
 <!-- HOW IT WORKS -->
@@ -281,6 +347,29 @@
       <span class="step-n">3</span>
       <h3>Profitez à 2 fois plus</h3>
       <p>Confirmez, partagez la location, et vivez l'été au Val d'Allos — la 2ᵉ semaine est offerte.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery reveal">
+  <div class="gallery-grid">
+    <!-- Pour activer une photo : remplacez le <div class="ph-ph"> par <img src="images/residence.jpg" alt="..."> -->
+    <div class="ph">
+      <div class="ph-ph">📷 images/residence.jpg<br><small>(photo de la résidence)</small></div>
+      <span class="ph-cap">La résidence au pied des pistes</span>
+    </div>
+    <div class="ph">
+      <div class="ph-ph">📷 images/appart.jpg<br><small>(appartement)</small></div>
+    </div>
+    <div class="ph">
+      <div class="ph-ph">📷 images/piscine.jpg</div>
+    </div>
+    <div class="ph">
+      <div class="ph-ph">📷 images/montagne.jpg</div>
+    </div>
+    <div class="ph">
+      <div class="ph-ph">📷 images/salon.jpg</div>
     </div>
   </div>
 </section>
@@ -325,9 +414,10 @@
         <label for="appart">Type d'appartement</label>
         <select id="appart">
           <option value="">Indifférent / à conseiller</option>
-          <option>T2 (2–4 personnes)</option>
-          <option>T3 (4–6 personnes)</option>
-          <option>T3-8 (6–8 personnes)</option>
+          <option>T2 / T2 supérieur (4–6 pers.)</option>
+          <option>T3 — 6 couchages</option>
+          <option>Duplex</option>
+          <option>T3 — 8 couchages</option>
           <option>Plusieurs appartements (2 familles)</option>
         </select>
       </div>
