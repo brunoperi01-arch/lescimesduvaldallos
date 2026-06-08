@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partagez la promo ! — Les Cimes du Val d'Allos</title>
+<meta name="description" content="1 semaine achetée = 1 semaine offerte. Partagez votre location d'été au cœur du Val d'Allos. Offre limitée.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#2f5e40;
+    --navy-deep:#234b32;
+    --gold:#e8a521;
+    --gold-soft:#f4c869;
+    --cream:#f7f2e8;
+    --ink:#1a2820;
+    --green:#4e7a52;
+    --white:#ffffff;
+    --shadow:rgba(35,75,50,.22);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Outfit',sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+
+  /* ====== ATMOSPHERE / TEXTURE ====== */
+  .grain{
+    position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.04;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ====== HERO ====== */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:80px 24px 60px;
+    background:
+      radial-gradient(ellipse at 20% 0%, rgba(232,165,33,.18), transparent 55%),
+      radial-gradient(ellipse at 90% 100%, rgba(122,168,110,.28), transparent 50%),
+      linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);
+    color:var(--white);
+    overflow:hidden;
+  }
+  /* mountain silhouette */
+  .ridge{
+    position:absolute;left:0;right:0;bottom:-1px;width:100%;height:auto;z-index:2;
+  }
+  .hero-eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:13px;letter-spacing:.32em;text-transform:uppercase;font-weight:600;
+    color:var(--gold-soft);margin-bottom:28px;
+    opacity:0;transform:translateY(20px);animation:rise .8s .1s forwards;
+  }
+  .hero-eyebrow::before,.hero-eyebrow::after{content:"";width:28px;height:1px;background:var(--gold);opacity:.6}
+  .hero h1{
+    font-family:'Anton',sans-serif;
+    font-size:clamp(54px,12vw,140px);
+    line-height:.9;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    text-shadow:0 6px 30px rgba(0,0,0,.4);
+    position:relative;z-index:3;
+  }
+  .hero h1 .line1{display:block;color:var(--white);opacity:0;transform:translateY(30px);animation:rise .9s .25s forwards}
+  .hero h1 .line2{display:block;color:var(--gold);opacity:0;transform:translateY(30px);animation:rise .9s .4s forwards}
+  .hero-sub{
+    margin-top:26px;font-family:'Fraunces',serif;font-style:italic;
+    font-size:clamp(18px,3vw,26px);font-weight:400;max-width:620px;
+    color:rgba(255,255,255,.9);position:relative;z-index:3;
+    opacity:0;transform:translateY(20px);animation:rise .9s .55s forwards;
+  }
+  .scroll-cue{
+    position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:4;
+    font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.6);
+    display:flex;flex-direction:column;align-items:center;gap:8px;
+    opacity:0;animation:fade 1s 1.2s forwards;
+  }
+  .scroll-cue span{width:1px;height:34px;background:linear-gradient(var(--gold),transparent);animation:pulse 1.8s infinite}
+
+  /* ====== OFFER CARD ====== */
+  .offer{
+    position:relative;z-index:5;margin:-70px auto 0;max-width:880px;padding:0 24px;
+  }
+  .offer-card{
+    background:var(--white);
+    border-radius:26px;
+    box-shadow:0 40px 80px -30px var(--shadow);
+    padding:clamp(32px,5vw,56px);
+    text-align:center;
+    position:relative;
+    border:1px solid rgba(22,38,63,.06);
+  }
+  .offer-badge{
+    position:absolute;top:-18px;left:50%;transform:translateX(-50%);
+    background:var(--gold);color:var(--navy);font-weight:700;
+    font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+    padding:9px 22px;border-radius:100px;box-shadow:0 10px 24px -8px var(--gold);
+    white-space:nowrap;
+  }
+  .equation{
+    display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:14px;margin:18px 0 8px;
+  }
+  .eq-block{display:flex;flex-direction:column;align-items:center;line-height:1}
+  .eq-num{font-family:'Anton',sans-serif;font-size:clamp(60px,11vw,96px)}
+  .eq-num.buy{color:var(--navy)}
+  .eq-num.free{color:var(--gold)}
+  .eq-label{font-size:clamp(15px,2.4vw,20px);font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-top:2px}
+  .eq-label.buy{color:var(--navy)}
+  .eq-label.free{color:var(--gold)}
+  .eq-sign{font-family:'Anton',sans-serif;font-size:clamp(40px,8vw,70px);color:var(--ink);opacity:.35}
+  .offer-explain{
+    font-family:'Fraunces',serif;font-size:clamp(17px,2.5vw,21px);color:var(--ink);
+    max-width:560px;margin:14px auto 0;
+  }
+  .offer-explain b{color:var(--green);font-weight:600}
+
+  .pills{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:30px}
+  .pill{
+    display:inline-flex;align-items:center;gap:9px;
+    background:var(--cream);border:1px solid rgba(22,38,63,.08);
+    padding:11px 18px;border-radius:100px;font-weight:600;font-size:15px;color:var(--navy);
+  }
+  .pill .ic{font-size:18px}
+
+  /* ====== HOW IT WORKS ====== */
+  .how{max-width:980px;margin:90px auto 0;padding:0 24px;text-align:center}
+  .section-kicker{font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:12px}
+  .section-title{font-family:'Anton',sans-serif;font-size:clamp(32px,6vw,52px);text-transform:uppercase;color:var(--navy);line-height:1;letter-spacing:.5px}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+  .step{
+    background:var(--white);border-radius:20px;padding:34px 26px;text-align:left;
+    box-shadow:0 24px 50px -34px var(--shadow);border:1px solid rgba(22,38,63,.05);
+    position:relative;overflow:hidden;
+  }
+  .step-n{font-family:'Anton',sans-serif;font-size:64px;color:var(--gold);opacity:.22;line-height:.8;position:absolute;top:14px;right:18px}
+  .step h3{font-family:'Fraunces',serif;font-size:22px;color:var(--navy);margin-bottom:8px;font-weight:600}
+  .step p{font-size:15px;color:#52606e}
+
+  /* ====== FORM ====== */
+  .form-wrap{max-width:720px;margin:90px auto 0;padding:0 24px}
+  .form-card{
+    background:
+      radial-gradient(ellipse at 100% 0%, rgba(232,165,33,.14), transparent 50%),
+      linear-gradient(165deg,var(--navy) 0%,var(--navy-deep) 100%);
+    border-radius:28px;padding:clamp(32px,5vw,52px);color:var(--white);
+    box-shadow:0 50px 90px -36px rgba(19,39,27,.6);position:relative;overflow:hidden;
+  }
+  .form-card h2{font-family:'Anton',sans-serif;font-size:clamp(28px,5vw,44px);text-transform:uppercase;line-height:1;letter-spacing:.5px}
+  .form-card .lead{font-family:'Fraunces',serif;font-style:italic;color:rgba(255,255,255,.82);margin:14px 0 30px;font-size:18px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .field{margin-bottom:16px;text-align:left}
+  .field.full{grid-column:1/-1}
+  label{display:block;font-size:13px;font-weight:600;letter-spacing:.04em;margin-bottom:7px;color:var(--gold-soft)}
+  input,select,textarea{
+    width:100%;padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.16);
+    background:rgba(255,255,255,.06);color:var(--white);font-family:'Outfit',sans-serif;font-size:15px;
+    transition:border .2s,background .2s;
+  }
+  input::placeholder,textarea::placeholder{color:rgba(255,255,255,.4)}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);background:rgba(255,255,255,.1)}
+  select option{color:var(--ink)}
+  textarea{resize:vertical;min-height:90px}
+  .consent{display:flex;gap:11px;align-items:flex-start;margin:6px 0 22px;text-align:left}
+  .consent input{width:auto;margin-top:4px;accent-color:var(--gold);flex-shrink:0}
+  .consent label{font-size:12.5px;font-weight:400;color:rgba(255,255,255,.7);letter-spacing:0;line-height:1.5}
+  .consent a{color:var(--gold-soft);text-decoration:underline}
+  .submit{
+    width:100%;padding:17px;border:none;border-radius:14px;cursor:pointer;
+    background:var(--gold);color:var(--navy);font-family:'Outfit',sans-serif;
+    font-size:17px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;
+    transition:transform .15s,box-shadow .25s;box-shadow:0 16px 36px -12px rgba(232,165,33,.6);
+  }
+  .submit:hover{transform:translateY(-2px);box-shadow:0 22px 44px -12px rgba(232,165,33,.75)}
+  .submit:active{transform:translateY(0)}
+  .err{color:#ff9b8a;font-size:12.5px;margin-top:5px;display:none}
+  .micro{text-align:center;font-size:12px;color:rgba(255,255,255,.45);margin-top:16px}
+
+  /* ====== SUCCESS ====== */
+  .success{display:none;text-align:center;padding:20px 0}
+  .success .check{
+    width:78px;height:78px;border-radius:50%;background:var(--gold);margin:0 auto 22px;
+    display:flex;align-items:center;justify-content:center;animation:pop .5s;
+  }
+  .success h2{margin-bottom:14px}
+  .success p{color:rgba(255,255,255,.82);font-size:17px;max-width:440px;margin:0 auto}
+
+  /* ====== FOOTER ====== */
+  footer{margin-top:90px;background:var(--navy-deep);color:rgba(255,255,255,.65);text-align:center;padding:50px 24px 40px}
+  .footer-logo{font-family:'Fraunces',serif;font-size:30px;color:var(--white);font-weight:600;letter-spacing:.5px}
+  .footer-logo small{display:block;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-top:4px;font-family:'Outfit',sans-serif;font-weight:500}
+  .footer-contact{margin-top:22px;font-size:15px;line-height:1.9}
+  .footer-contact a{color:var(--gold-soft);text-decoration:none}
+  .footer-tags{margin-top:22px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+  .footer-legal{margin-top:26px;font-size:12px;color:rgba(255,255,255,.3);max-width:560px;margin-left:auto;margin-right:auto;line-height:1.6}
+
+  /* ====== ANIMATIONS ====== */
+  @keyframes rise{to{opacity:1;transform:translateY(0)}}
+  @keyframes fade{to{opacity:1}}
+  @keyframes pulse{0%,100%{opacity:.3}50%{opacity:1}}
+  @keyframes pop{0%{transform:scale(.4);opacity:0}60%{transform:scale(1.1)}100%{transform:scale(1);opacity:1}}
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}
+  .reveal.in{opacity:1;transform:translateY(0)}
+
+  @media(max-width:680px){
+    .grid2{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr}
+    .eq-sign{font-size:48px}
+  }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-eyebrow">Été au Val d'Allos</div>
+  <h1>
+    <span class="line1">Partagez</span>
+    <span class="line2">la promo !</span>
+  </h1>
+  <p class="hero-sub">Vos vacances d'été à la montagne, à partager sans compter. Une offre pensée pour les familles qui aiment se retrouver.</p>
+  <svg class="ridge" viewBox="0 0 1440 120" preserveAspectRatio="none" fill="#f7f2e8">
+    <path d="M0,120 L0,70 L180,30 L320,75 L480,15 L640,60 L820,20 L1000,65 L1180,25 L1320,60 L1440,35 L1440,120 Z"/>
+  </svg>
+  <div class="scroll-cue">Découvrir<span></span></div>
+</header>
+
+<!-- OFFER -->
+<section class="offer reveal">
+  <div class="offer-card">
+    <div class="offer-badge">★ Offre limitée — Étés 2026 & 2027</div>
+    <div class="equation">
+      <div class="eq-block">
+        <span class="eq-num buy">1</span>
+        <span class="eq-label buy">semaine achetée</span>
+      </div>
+      <span class="eq-sign">=</span>
+      <div class="eq-block">
+        <span class="eq-num free">1</span>
+        <span class="eq-label free">semaine offerte</span>
+      </div>
+    </div>
+    <p class="offer-explain">Réservez <b>2 semaines</b> dans l'un de nos appartements et ne payez que la première. Idéal pour <b>2 familles</b> qui partagent le séjour, ou pour de longues vacances à prix doux.</p>
+    <div class="pills">
+      <span class="pill"><span class="ic">👨‍👩‍👧‍👦</span> 2 familles</span>
+      <span class="pill"><span class="ic">📅</span> 2 semaines</span>
+      <span class="pill"><span class="ic">💛</span> 1 seule offre</span>
+      <span class="pill"><span class="ic">🏔️</span> Au cœur du Val d'Allos</span>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how reveal">
+  <div class="section-kicker">Comment ça marche</div>
+  <h2 class="section-title">Simple comme une rando</h2>
+  <div class="steps">
+    <div class="step">
+      <span class="step-n">1</span>
+      <h3>Laissez vos coordonnées</h3>
+      <p>Remplissez le formulaire avec vos dates et le nombre de personnes. Une minute suffit.</p>
+    </div>
+    <div class="step">
+      <span class="step-n">2</span>
+      <h3>On vous répond par mail</h3>
+      <p>Notre équipe vous écrit pour vérifier les disponibilités et construire votre séjour sur mesure.</p>
+    </div>
+    <div class="step">
+      <span class="step-n">3</span>
+      <h3>Profitez à 2 fois plus</h3>
+      <p>Confirmez, partagez la location, et vivez l'été au Val d'Allos — la 2ᵉ semaine est offerte.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="form-wrap reveal">
+  <div class="form-card">
+    <div id="formView">
+      <h2>Je profite de l'offre</h2>
+      <p class="lead">Laissez-nous vos coordonnées, on vous répond par mail très vite.</p>
+
+      <div class="grid2">
+        <div class="field">
+          <label for="nom">Nom & prénom *</label>
+          <input type="text" id="nom" placeholder="Marie Dupont">
+          <div class="err" id="err-nom">Merci d'indiquer votre nom.</div>
+        </div>
+        <div class="field">
+          <label for="tel">Téléphone <span style="opacity:.5;font-weight:400">(optionnel)</span></label>
+          <input type="tel" id="tel" placeholder="06 12 34 56 78">
+        </div>
+      </div>
+
+      <div class="field full">
+        <label for="email">Email *</label>
+        <input type="email" id="email" placeholder="marie.dupont@email.fr">
+        <div class="err" id="err-email">Adresse email invalide.</div>
+      </div>
+
+      <div class="grid2">
+        <div class="field">
+          <label for="dates">Dates souhaitées</label>
+          <input type="text" id="dates" placeholder="Ex : 12 → 26 juillet">
+        </div>
+        <div class="field">
+          <label for="pers">Nombre de personnes</label>
+          <input type="number" id="pers" min="1" max="16" placeholder="Ex : 6">
+        </div>
+      </div>
+
+      <div class="field full">
+        <label for="appart">Type d'appartement</label>
+        <select id="appart">
+          <option value="">Indifférent / à conseiller</option>
+          <option>T2 (2–4 personnes)</option>
+          <option>T3 (4–6 personnes)</option>
+          <option>T3-8 (6–8 personnes)</option>
+          <option>Plusieurs appartements (2 familles)</option>
+        </select>
+      </div>
+
+      <div class="field full">
+        <label for="msg">Votre message (optionnel)</label>
+        <textarea id="msg" placeholder="Animaux, besoins particuliers, questions sur l'offre…"></textarea>
+      </div>
+
+      <div class="consent">
+        <input type="checkbox" id="rgpd">
+        <label for="rgpd">J'accepte que mes données soient utilisées par <b>SAS Les Foux d'Allos</b> (Les Cimes du Val d'Allos) pour me recontacter au sujet de cette offre. <a href="https://www.lescimesduvaldallos.com/mentions-legales" target="_blank" rel="noopener">Politique de confidentialité</a>. *</label>
+      </div>
+      <div class="err" id="err-rgpd" style="margin-top:-14px;margin-bottom:14px">Votre consentement est nécessaire.</div>
+
+      <button class="submit" id="send">Recevoir mon offre →</button>
+      <p class="micro">🔒 Aucune carte demandée. Réponse par mail sous 48 h ouvrées.</p>
+    </div>
+
+    <div class="success" id="successView">
+      <div class="check">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#16263f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h2>Demande envoyée !</h2>
+      <p>Merci <span id="prenomEcho"></span>, nous avons bien reçu votre demande. Nous vous répondons par mail sous 48 h pour finaliser votre séjour au Val d'Allos. Pensez à vérifier vos spams. À très vite ! 🏔️</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Les Cimes<small>du Val d'Allos</small></div>
+  <div class="footer-contact">
+    📞 <a href="tel:+33492836559">04 92 83 65 59</a> &nbsp;•&nbsp;
+    ✉️ <a href="mailto:reservation@lescimesduvaldallos.com">reservation@lescimesduvaldallos.com</a><br>
+    🌐 <a href="https://lescimesduvaldallos.com" target="_blank">lescimesduvaldallos.com</a>
+  </div>
+  <div class="footer-tags"><span>Authentique</span><span>•</span><span>Naturel</span><span>•</span><span>Convivial</span></div>
+  <p class="footer-legal">Offre « 1 semaine achetée = 1 semaine offerte » valable sur les séjours de 2 semaines consécutives, étés 2026 et 2027, dans la limite des disponibilités. Non cumulable avec d'autres promotions. Conditions détaillées communiquées lors de la prise de contact. SAS Les Foux d'Allos — Résidence Les Cimes du Val d'Allos, La Foux d'Allos (04). Licence Atout France n° IM004180007.</p>
+</footer>
+
+<script>
+/* =================================================================
+   CONFIG — UNE SEULE LIGNE À MODIFIER : mettez votre adresse mail.
+   Les leads vous arriveront directement dans cette boîte mail.
+
+   2 méthodes possibles (choisissez-en UNE) :
+
+   • FORMSUBMIT (zéro inscription, recommandé pour démarrer) :
+       Laissez MODE = "formsubmit" et mettez votre email ci-dessous.
+       Au tout premier envoi, vous recevrez un mail de FormSubmit
+       à confirmer (un seul clic). Ensuite tout est automatique.
+
+   • FORMSPREE (compte gratuit, tableau de bord des leads) :
+       Créez un formulaire sur formspree.io, récupérez votre ID
+       (ex : "xeqwabcd"), mettez MODE = "formspree" et collez l'ID.
+   ================================================================= */
+const MODE          = "formsubmit";                        // "formsubmit" ou "formspree"
+const EMAIL_CIBLE   = "reservation@lescimesduvaldallos.com"; // ← VOTRE EMAIL ICI
+const FORMSPREE_ID  = "";                                   // ← seulement si MODE = "formspree"
+
+/* ====== Reveal on scroll ====== */
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ====== Validation + submit ====== */
+const $=id=>document.getElementById(id);
+function showErr(id,on){const el=$('err-'+id);if(el)el.style.display=on?'block':'none';}
+function validEmail(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);}
+
+
+$('send').addEventListener('click',async()=>{
+  const nom=$('nom').value.trim();
+  const email=$('email').value.trim();
+  const rgpd=$('rgpd').checked;
+  let ok=true;
+  showErr('nom',!nom); if(!nom)ok=false;
+  showErr('email',!validEmail(email)); if(!validEmail(email))ok=false;
+  showErr('rgpd',!rgpd); if(!rgpd)ok=false;
+  if(!ok)return;
+
+  // Données envoyées par mail
+  const data={
+    "Nom":nom,
+    "Email":email,
+    "Téléphone":$('tel').value.trim()||"—",
+    "Dates souhaitées":$('dates').value.trim()||"—",
+    "Nombre de personnes":$('pers').value.trim()||"—",
+    "Type d'appartement":$('appart').value||"Indifférent",
+    "Message":$('msg').value.trim()||"—",
+    "Source":"Landing Facebook - Partagez la promo",
+    "_subject":"🏔️ Nouveau lead — Offre Partagez la promo",
+    "_template":"table",
+    "_captcha":"false"
+  };
+
+  const btn=$('send'); btn.textContent="Envoi…"; btn.style.opacity=".7";
+  try{
+    let url, body, headers;
+    if(MODE==="formspree" && FORMSPREE_ID){
+      url="https://formspree.io/f/"+FORMSPREE_ID;
+      headers={"Content-Type":"application/json","Accept":"application/json"};
+      body=JSON.stringify(data);
+    } else {
+      // FormSubmit (par défaut) — AJAX endpoint
+      url="https://formsubmit.co/ajax/"+encodeURIComponent(EMAIL_CIBLE);
+      headers={"Content-Type":"application/json","Accept":"application/json"};
+      body=JSON.stringify(data);
+    }
+    const res=await fetch(url,{method:"POST",headers,body});
+    if(!res.ok) throw new Error("HTTP "+res.status);
+
+    $('prenomEcho').textContent=nom.split(' ')[0];
+    $('formView').style.display='none';
+    $('successView').style.display='block';
+    $('successView').scrollIntoView({behavior:'smooth',block:'center'});
+  }catch(err){
+    btn.textContent="Réessayer →"; btn.style.opacity="1";
+    alert("Une erreur est survenue lors de l'envoi. Merci de réessayer, ou écrivez-nous directement à "+EMAIL_CIBLE+".");
+  }
+});
+
+</script>
+</body>
+</html>
