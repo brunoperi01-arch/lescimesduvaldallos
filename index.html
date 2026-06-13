@@ -94,6 +94,7 @@
     opacity:0;transform:translateY(20px);animation:rise .9s .7s forwards;
   }
   .hero-cta:hover{transform:translateY(-2px);box-shadow:0 24px 50px -12px rgba(232,165,33,.8)}
+  .hero-proof{margin-top:16px;position:relative;z-index:5;font-size:13px;letter-spacing:.04em;color:rgba(255,255,255,.7);font-weight:500;opacity:0;animation:rise .9s .85s forwards}
 
   /* ====== OFFER CARD ====== */
   .offer{
@@ -211,8 +212,9 @@
     border-radius:28px;padding:clamp(32px,5vw,52px);color:var(--white);
     box-shadow:0 50px 90px -36px rgba(19,39,27,.6);position:relative;overflow:hidden;
   }
-  .form-card h2{font-family:var(--font-display);font-size:clamp(28px,5vw,44px);text-transform:uppercase;line-height:1;letter-spacing:.5px}
-  .form-card .lead{font-family:var(--font-serif);font-style:italic;color:rgba(255,255,255,.82);margin:14px 0 30px;font-size:18px}
+  .form-card h2{font-family:var(--font-display);font-size:clamp(28px,5vw,44px);text-transform:uppercase;line-height:1;letter-spacing:.5px}.form-card .lead{font-family:var(--font-serif);font-style:italic;color:rgba(255,255,255,.82);margin:14px 0 16px;font-size:18px}
+  .form-reassure{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:28px}
+  .form-reassure span{font-size:13px;font-weight:600;color:var(--gold-soft);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);padding:7px 14px;border-radius:100px}
   .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   .field{margin-bottom:16px;text-align:left}
   .field.full{grid-column:1/-1}
@@ -226,10 +228,11 @@
   input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);background:rgba(255,255,255,.1)}
   select option{color:var(--ink)}
   textarea{resize:vertical;min-height:90px}
-  .consent{display:flex;gap:11px;align-items:flex-start;margin:6px 0 22px;text-align:left}
-  .consent input{width:auto;margin-top:4px;accent-color:var(--gold);flex-shrink:0}
+  .consent{display:flex;gap:11px;align-items:flex-start;margin:6px 0 22px;text-align:left}.consent input{width:auto;margin-top:4px;accent-color:var(--gold);flex-shrink:0}
   .consent label{font-size:12.5px;font-weight:400;color:rgba(255,255,255,.7);letter-spacing:0;line-height:1.5}
   .consent a{color:var(--gold-soft);text-decoration:underline}
+  .flex-dates{display:flex;gap:8px;align-items:center;margin-top:9px;font-size:12.5px;font-weight:400;color:rgba(255,255,255,.7);cursor:pointer}
+  .flex-dates input{width:auto;accent-color:var(--gold);flex-shrink:0;margin:0}
   .submit{
     width:100%;padding:17px;border:none;border-radius:14px;cursor:pointer;
     background:var(--gold);color:var(--navy);font-family:var(--font-body);
@@ -290,6 +293,7 @@
   </h1>
   <p class="hero-sub">Une semaine payée, une semaine offerte : invitez une autre famille et partez à deux profiter de l'été au Val d'Allos.</p>
   <a href="#form" class="hero-cta">Je demande mes dates disponibles →</a>
+  <p class="hero-proof">Résidence 3★ · Label Famille Plus · Animaux bienvenus</p>
   <svg class="ridge" viewBox="0 0 1440 120" preserveAspectRatio="none" fill="#f1f6f7">
     <path d="M0,120 L0,70 L180,30 L320,75 L480,15 L640,60 L820,20 L1000,65 L1180,25 L1320,60 L1440,35 L1440,120 Z"/>
   </svg>
@@ -335,6 +339,7 @@
   <div class="trust-item"><span class="big">3★</span> Résidence de tourisme</div>
   <div class="trust-item"><span class="ti-ic">👨‍👩‍👧‍👦</span> Label <b style="margin-left:4px">Famille Plus</b></div>
   <div class="trust-item"><span class="big">86%</span> de clients satisfaits</div>
+  <div class="trust-item"><span class="ti-ic">🐶</span> Animaux bienvenus</div>
 </section>
 
 <!-- HOW IT WORKS -->
@@ -387,7 +392,12 @@
   <div class="form-card">
     <div id="formView">
       <h2>Je profite de l'offre</h2>
-      <p class="lead">Laissez-nous vos coordonnées, on vous répond par mail très vite.</p>
+      <p class="lead">Laissez-nous vos coordonnées, on vous répond par mail sous 24-48h.</p>
+      <div class="form-reassure">
+        <span>⚡ 1 minute</span>
+        <span>🔒 Sans engagement</span>
+        <span>🐶 Animaux acceptés</span>
+      </div>
 
       <div class="grid2">
         <div class="field">
@@ -411,6 +421,7 @@
         <div class="field">
           <label for="dates">Dates souhaitées</label>
           <input type="text" id="dates" placeholder="Ex : 12 → 26 juillet">
+          <label class="flex-dates"><input type="checkbox" id="flex"> Je suis flexible, proposez-moi vos disponibilités</label>
         </div>
         <div class="field">
           <label for="pers">Nombre de personnes</label>
@@ -512,7 +523,7 @@ $('send').addEventListener('click',async()=>{
     "Nom":nom,
     "Email":email,
     "Téléphone":$('tel').value.trim()||"—",
-    "Dates souhaitées":$('dates').value.trim()||"—",
+    "Dates souhaitées":($('flex').checked ? "Flexible — souhaite vos disponibilités" : ($('dates').value.trim()||"—")),
     "Nombre de personnes":$('pers').value.trim()||"—",
     "Type d'appartement":$('appart').value||"Indifférent",
     "Message":$('msg').value.trim()||"—",
