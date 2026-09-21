@@ -1,9 +1,10 @@
-// @vitest-environment jsdom
 import { describe, it, expect } from "vitest";
+import { JSDOM } from "jsdom";
 import { getFocusable } from "../focusTrap";
 
 describe("getFocusable", () => {
   it("retourne les éléments focusables, ignore disabled et tabindex=-1", () => {
+    const document = new JSDOM("<!doctype html><body></body>").window.document;
     const c = document.createElement("div");
     c.innerHTML = `
       <a href="#a">a</a>

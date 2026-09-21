@@ -9,7 +9,7 @@ describe("migrations Neon", () => {
   it("aucun rôle Supabase (service_role/anon/authenticated) ciblé par GRANT/REVOKE", () => {
     for (const f of files) {
       const body = readFileSync(new URL(f, dir), "utf8");
-      const bad = body.match(/\b(grant|revoke)\b[\s\S]*?\b(to|from)\s+(service_role|anon|authenticated)\b/gi);
+      const bad = body.match(/(?<![a-z0-9_])(service_role|anon|authenticated)(?![a-z0-9_])/gi);
       expect(bad, `${f} contient un rôle Supabase : ${bad}`).toBeNull();
     }
   });
