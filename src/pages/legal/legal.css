@@ -1,0 +1,55 @@
+.legal-page {
+  font-family: "Inter", system-ui, sans-serif;
+  color: #102530;
+  padding: 96px 24px 80px;
+  background: #fff;
+}
+.legal-container {
+  max-width: 820px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+.legal-container h1 {
+  font-family: "Bricolage Grotesque", "Inter", sans-serif;
+  font-size: clamp(30px, 4vw, 44px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #102530;
+  margin-bottom: 28px;
+}
+.legal-container h2 {
+  font-family: "Bricolage Grotesque", "Inter", sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #004068;
+  margin: 38px 0 12px;
+}
+.legal-container p,
+.legal-container li {
+  font-size: 15.5px;
+  font-weight: 300;
+  color: #33454f;
+}
+.legal-container ul { margin: 8px 0 8px 20px; }
+.legal-container li { margin-bottom: 6px; }
+.legal-container a { color: #004068; font-weight: 500; }
+.legal-container em { color: #7a8a92; }
+.legal-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 13.5px;
+}
+.legal-container th,
+.legal-container td {
+  border: 1px solid #DCE4EA;
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+.legal-container th {
+  background: #F3F6F8;
+  font-weight: 600;
+  color: #102530;
+}

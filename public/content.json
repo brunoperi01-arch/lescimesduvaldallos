@@ -1,0 +1,445 @@
+{
+  "residence": {
+    "nom": "Les Cimes du Val d'Allos",
+    "raisonSociale": "SAS Les Foux d'Allos",
+    "adresse": "Route du col d'Allos, 04260 La Foux d'Allos",
+    "telephone": "04 92 83 65 59",
+    "email": "reservation@lescimesduvaldallos.com",
+    "atoutFrance": "IM004180007",
+    "resalys": "https://cdva.resalys.com/rsl/clickbooking",
+    "resalysClient": "https://cdva.resalys.com/rsl/clickbooking?display=customer_area&auth_sub_page=authentication_customer_area",
+    "coffrets": "https://lescimesduvaldallos.secretbox.fr/",
+    "famillePlus": true,
+    "classement": "3 étoiles",
+    "responsablesPublication": "Bruno Peri, Cécile Blas",
+    "etatDesLieux": "https://lescimes.vercel.app/",
+    "siege": "Lieudit La Sestrière – La Foux d'Allos, 04260 Allos"
+  },
+  "seasonOverride": "auto",
+  "seasons": {
+    "hiver": {
+      "accent": "#004068",
+      "accentDeep": "#002A44",
+      "hero": {
+        "image": "/images/hero-hiver.jpg",
+        "eyebrow": "La Foux d'Allos · 1 800 m · Au pied des pistes",
+        "titre": "Vos vacances au pied des pistes à La Foux d'Allos",
+        "sousTitre": "Appartements de 2 à 8 personnes avec piscine intérieure chauffée, sauna et hammam. Tarifs hiver bientôt disponibles."
+      },
+      "pillars": [
+        {
+          "k": "Ski",
+          "h": "Pied des pistes",
+          "p": "Accès direct à l'Espace Lumière et à la piste de luge 4 saisons."
+        },
+        {
+          "k": "Détente",
+          "h": "Piscine chauffée",
+          "p": "Espace détente intérieur, inclus dans toute location."
+        },
+        {
+          "k": "Capacité",
+          "h": "Du studio au T3",
+          "p": "Appartements de 2 à 8 personnes, tous avec balcon."
+        },
+        {
+          "k": "Accueil",
+          "h": "Gérée par les propriétaires",
+          "p": "Un service personnel et une prestation à la carte."
+        }
+      ],
+      "activitesTitre": "L'un des plus grands domaines des Alpes du Sud.",
+      "activitesIntro": "La liaison Val d'Allos – Pra Loup, au cœur des forêts de mélèzes. Des pistes pour tous les niveaux, un snowpark et une piste de luge 4 saisons.",
+      "activites": [
+        {
+          "h": "180 km de pistes",
+          "p": "Le domaine Espace Lumière, relié à Pra Loup.",
+          "img": "/images/activite-ski.jpg"
+        },
+        {
+          "h": "Ski au pied",
+          "p": "Chaussez les skis au départ de la résidence.",
+          "img": ""
+        },
+        {
+          "h": "Luge 4 saisons",
+          "p": "Une piste de luge sur rails, sensations garanties.",
+          "img": ""
+        },
+        {
+          "h": "Snowpark",
+          "p": "Modules et espaces ludiques pour tous niveaux.",
+          "img": ""
+        }
+      ],
+      "domaineTitre": "L'un des plus grands domaines des Alpes du Sud.",
+      "domaineIntro": "La liaison skis aux pieds entre La Foux d'Allos et Pra Loup, au cœur des forêts de mélèzes. Des pistes pour tous les niveaux, un snowpark et une piste de luge sur rail ouverte toute l'année.",
+      "domaineImage": "/images/activite-ski.jpg",
+      "stats": [
+        {
+          "n": "180",
+          "lb": "km de pistes"
+        },
+        {
+          "n": "91",
+          "lb": "pistes"
+        },
+        {
+          "n": "37",
+          "lb": "remontées"
+        }
+      ]
+    },
+    "ete": {
+      "accent": "#3E7C4E",
+      "accentDeep": "#2C5C3A",
+      "hero": {
+        "image": "",
+        "eyebrow": "La Foux d'Allos · 1 800 m · Été en montagne",
+        "titre": "Cet été, respirez à 1 800 m d'altitude",
+        "sousTitre": "Appartements familiaux avec piscine intérieure chauffée, sauna et hammam."
+      },
+      "pillars": [
+        {
+          "k": "Randonnée",
+          "h": "Sentiers à la porte",
+          "p": "Des itinéraires au départ de la station, tous niveaux."
+        },
+        {
+          "k": "Nature",
+          "h": "Lac d'Allos",
+          "p": "Le lac d'altitude et le Mercantour à quelques kilomètres."
+        },
+        {
+          "k": "Sensations",
+          "h": "VTT & luge 4 saisons",
+          "p": "Pistes VTT et luge sur rails, ouvertes l'été."
+        },
+        {
+          "k": "Détente",
+          "h": "Piscine chauffée",
+          "p": "Espace détente intérieur inclus dans toute location."
+        }
+      ],
+      "activitesTitre": "Le Mercantour à votre porte.",
+      "activitesIntro": "Depuis la résidence, la montagne s'ouvre en grand : à pied, à vélo, ou au bord de l'eau.",
+      "activites": [
+        {
+          "h": "Randonnée",
+          "p": "Sentiers balisés tous niveaux, du tour de vallée aux sommets.",
+          "img": ""
+        },
+        {
+          "h": "Lac d'Allos",
+          "p": "Un joyau d'altitude au cœur du Parc national du Mercantour.",
+          "img": ""
+        },
+        {
+          "h": "VTT & luge sur rails",
+          "p": "Descentes VTT et piste de luge 4 saisons.",
+          "img": ""
+        },
+        {
+          "h": "Village & terroir",
+          "p": "Marchés et produits locaux de la vallée du Haut-Verdon.",
+          "img": ""
+        }
+      ],
+      "domaineTitre": "Le Mercantour à votre porte.",
+      "domaineIntro": "Depuis la résidence, la montagne s'ouvre en grand : à pied, à vélo, ou au bord de l'eau.",
+      "domaineImage": ""
+    }
+  },
+  "hebergements": [
+    {
+      "tag": "2 à 4 pers.",
+      "meta": "≈ 38 m²",
+      "h": "T2",
+      "p": "Salon avec cuisine et banquette lit gigogne, chambre avec lit double, coin montagne avec lits superposés, salle de bain avec WC séparés. Balcon.",
+      "img": ""
+    },
+    {
+      "tag": "2 à 4 pers.",
+      "meta": "≈ 43 m²",
+      "h": "T2 supérieur",
+      "p": "Même agencement que le T2, en plus spacieux (≈ 43 m²). Salon, chambre lit double, coin montagne, salle de bain avec WC séparés. Balcon.",
+      "img": ""
+    },
+    {
+      "tag": "jusqu'à 6 pers.",
+      "meta": "2 chambres",
+      "h": "T3 · 6 couchages",
+      "p": "Salon avec cuisine et banquette lit gigogne, une chambre lit double, une chambre deux lits simples, salle de bain avec WC séparés. Balcon.",
+      "img": ""
+    },
+    {
+      "tag": "6 à 8 pers.",
+      "meta": "Duplex",
+      "h": "Duplex",
+      "p": "En bas : salon cuisine avec banquette gigogne, coin montagne lits superposés, salle de bain (baignoire) WC séparés. À l'étage : chambre lit double, mezzanine deux lits simples, salle de bain (douche) avec WC. Balcon.",
+      "img": ""
+    },
+    {
+      "tag": "jusqu'à 8 pers.",
+      "meta": "2 chambres + coin montagne",
+      "h": "T3 · 8 couchages",
+      "p": "Salon cuisine avec banquette gigogne, deux chambres (lit double ou deux lits simples), coin montagne deux lits simples, une salle de bain (baignoire) WC séparés et une salle de bain (douche) avec WC. Balcon.",
+      "img": ""
+    }
+  ],
+  "services": [
+    {
+      "i": "≋",
+      "h": "Piscine intérieure chauffée",
+      "p": "Espace détente inclus (peut fermer certains jours)."
+    },
+    {
+      "i": "♨",
+      "h": "Sauna & hammam",
+      "p": "Accès gratuit à l'espace bien-être."
+    },
+    {
+      "i": "⛷",
+      "h": "Casiers à skis",
+      "p": "Casiers gratuits pour ranger le matériel."
+    },
+    {
+      "i": "♟",
+      "h": "Salle de jeux",
+      "p": "Jeux de société et coin détente sur place."
+    },
+    {
+      "i": "☶",
+      "h": "Location fondue / raclette",
+      "p": "Machines à fondue et raclette proposées à la location."
+    },
+    {
+      "i": "⌂",
+      "h": "Cuisine équipée",
+      "p": "Chaque appartement avec cuisine complète et balcon."
+    },
+    {
+      "i": "☺",
+      "h": "Kit bébé",
+      "p": "Lit et chaise haute sur réservation, selon disponibilité."
+    }
+  ],
+  "pages": [
+    {
+      "slug": "notre-residence",
+      "title": "La résidence",
+      "metaDescription": "Résidence 3★ Les Cimes du Val d'Allos, gérée par ses propriétaires, au pied des pistes de La Foux d'Allos (1800 m). Station labellisée Famille Plus, piscine, sauna, hammam.",
+      "sections": [
+        {
+          "type": "hero",
+          "titre": "Une résidence 3★ gérée par ses propriétaires",
+          "sousTitre": "Au pied des pistes de La Foux d'Allos, à 1 800 m d'altitude.",
+          "image": "/images/hero-hiver.jpg"
+        },
+        {
+          "type": "text",
+          "titre": "Bienvenue aux Cimes du Val d'Allos",
+          "contenu": "Les Cimes du Val d'Allos est une résidence de tourisme 3 étoiles gérée par les propriétaires eux-mêmes. Des appartements spacieux du studio au T3 (de 2 à 8 personnes), une piscine intérieure chauffée, un sauna, un hammam, un personnel aux petits soins et une prestation à la carte au gré de vos besoins.\nSituée dans une station labellisée « Famille Plus », la résidence bénéficie d'un des meilleurs emplacements de la station : au pied des pistes, à quelques mètres des remontées mécaniques et de la piste de luge. Une navette desservant le centre s'arrête devant la résidence et une supérette est à quelques mètres."
+        },
+        {
+          "type": "cta",
+          "titre": "Envie de venir ?",
+          "texte": "Voir les disponibilités",
+          "lien": "https://cdva.resalys.com/rsl/clickbooking"
+        }
+      ]
+    },
+    {
+      "slug": "nos-prestations",
+      "title": "Nos prestations",
+      "metaDescription": "Piscine intérieure chauffée, sauna, hammam, casiers à skis, salle de jeux, location de matériel : toutes les prestations de la résidence Les Cimes du Val d'Allos.",
+      "sections": [
+        {
+          "type": "hero",
+          "titre": "Nos prestations",
+          "sousTitre": "Tout pour un séjour confortable, en toute saison.",
+          "image": ""
+        },
+        {
+          "type": "text",
+          "titre": "Espace bien-être",
+          "contenu": "Piscine intérieure chauffée, sauna et hammam en accès gratuit. Ces prestations annexes peuvent être fermées certains jours pour maintenance."
+        },
+        {
+          "type": "text",
+          "titre": "Praticité",
+          "contenu": "Casiers à skis gratuits, salle de jeux, location de machines à fondue et à raclette. Cuisine équipée et balcon dans chaque appartement."
+        },
+        {
+          "type": "text",
+          "titre": "Options sur réservation",
+          "contenu": "Location de linge de lit et de toilette, ménage de fin de séjour, kit bébé : disponibles sur réservation. Tarifs communiqués lors de la réservation."
+        }
+      ]
+    },
+    {
+      "slug": "la-station-val-d-allos",
+      "title": "La station",
+      "metaDescription": "La Foux d'Allos, 1800 m : Espace Lumière (180 km de pistes), lac d'Allos, Parc du Mercantour, luge sur rail ouverte toute l'année.",
+      "sections": [
+        {
+          "type": "hero",
+          "titre": "La Foux d'Allos, 1 800 m",
+          "sousTitre": "Au cœur du Val d'Allos et du Parc national du Mercantour.",
+          "image": "/images/activite-ski.jpg"
+        },
+        {
+          "type": "text",
+          "titre": "L'hiver — Espace Lumière",
+          "contenu": "L'Espace Lumière, l'un des plus grands domaines des Alpes du Sud : 180 km de pistes skis aux pieds, 91 pistes, 37 remontées mécaniques. Liaison La Foux d'Allos – Pra Loup. Piste de luge sur rail ouverte toute l'année. (Chiffres à revalider chaque saison — source : praloup.com / valdallos.com.)"
+        },
+        {
+          "type": "text",
+          "titre": "L'été — nature et randonnée",
+          "contenu": "Randonnées au cœur du Mercantour, le lac d'Allos (grand lac naturel d'altitude), VTT et grands espaces. Attention : le col d'Allos est fermé de novembre à mai."
+        }
+      ]
+    },
+    {
+      "slug": "informations-pratiques",
+      "title": "Informations pratiques",
+      "metaDescription": "Arrivée, départ, paiement, caution, animaux, parking, annulation : toutes les informations pratiques pour votre séjour aux Cimes du Val d'Allos.",
+      "sections": [
+        {
+          "type": "hero",
+          "titre": "Informations pratiques",
+          "sousTitre": "Tout ce qu'il faut savoir avant votre séjour.",
+          "image": "",
+          "alt": ""
+        },
+        {
+          "type": "text",
+          "titre": "Accès",
+          "contenu": "Lieudit La Sestrière – La Foux d'Allos, 04260 Allos. Le col d'Allos est fermé de novembre à mai : accès par Digne-les-Bains selon la saison. Navette de station devant la résidence, supérette à proximité."
+        },
+        {
+          "type": "text",
+          "titre": "Espace bien-être",
+          "contenu": "Piscine intérieure chauffée, sauna et hammam en accès gratuit. Ces prestations peuvent être fermées certains jours."
+        },
+        {
+          "type": "text",
+          "titre": "Options sur réservation",
+          "contenu": "Location de linge de lit et de toilette et ménage de fin de séjour, disponibles sur réservation. Tarifs communiqués lors de la réservation."
+        },
+        {
+          "type": "text",
+          "titre": "Réservation & conditions",
+          "contenu": "La réservation et le paiement s'effectuent via la centrale Resalys. Les conditions (acompte, solde, annulation, caution) sont celles présentées et acceptées dans le module de réservation."
+        },
+        {
+          "type": "cta",
+          "titre": "Une question ?",
+          "texte": "Appeler la réception",
+          "lien": "tel:0492836559"
+        }
+      ]
+    },
+    {
+      "slug": "acces-et-contact",
+      "title": "Accès & contact",
+      "metaDescription": "Contact et accès à la résidence Les Cimes du Val d'Allos, Route du col d'Allos, 04260 La Foux d'Allos. Tél 04 92 83 65 59.",
+      "sections": [
+        {
+          "type": "hero",
+          "titre": "Accès & contact",
+          "sousTitre": "Route du col d'Allos, 04260 La Foux d'Allos.",
+          "image": ""
+        },
+        {
+          "type": "text",
+          "titre": "Nous joindre",
+          "contenu": "Téléphone : 04 92 83 65 59\nE-mail : reservation@lescimesduvaldallos.com\nAdresse : Route du col d'Allos, 04260 La Foux d'Allos"
+        },
+        {
+          "type": "text",
+          "titre": "Y venir",
+          "contenu": "Le col d'Allos étant fermé de novembre à mai, l'accès se fait par Digne-les-Bains en hiver. Navette de station devant la résidence."
+        },
+        {
+          "type": "cta",
+          "titre": "Prêt à réserver ?",
+          "texte": "Voir les disponibilités",
+          "lien": "https://cdva.resalys.com/rsl/clickbooking"
+        }
+      ]
+    },
+    {
+      "slug": "nos-partenaires",
+      "title": "Nos partenaires",
+      "metaDescription": "Les partenaires de la résidence Les Cimes du Val d'Allos : location de matériel, soins en appartement.",
+      "sections": [
+        {
+          "type": "hero",
+          "titre": "Nos partenaires",
+          "sousTitre": "Des services partenaires pour votre séjour.",
+          "image": ""
+        },
+        {
+          "type": "text",
+          "titre": "Location de ski — Skiset",
+          "contenu": "Notre partenaire Skiset, situé à côté de la résidence, propose une remise additionnelle de 5 % sur les prix internet (jusqu'à -50 % sur les prix magasin). Tél. 04 92 83 81 39."
+        }
+      ]
+    },
+    {
+      "slug": "recrutement",
+      "title": "Recrutement",
+      "metaDescription": "La résidence Les Cimes du Val d'Allos recrute pour la saison. Logement possible.",
+      "sections": [
+        {
+          "type": "hero",
+          "titre": "Rejoignez l'équipe",
+          "sousTitre": "La résidence recrute pour la saison.",
+          "image": ""
+        },
+        {
+          "type": "text",
+          "titre": "Nos postes",
+          "contenu": "Nous recrutons pour l'entretien des appartements et des communs. Profil : autonome, motivé, rigoureux, respect des normes d'hygiène. Une première expérience en environnement touristique est un plus. Contrat 35h/semaine selon planning. Logement possible."
+        },
+        {
+          "type": "cta",
+          "titre": "Intéressé ?",
+          "texte": "Nous écrire",
+          "lien": "mailto:reservation@lescimesduvaldallos.com"
+        }
+      ]
+    }
+  ],
+  "legal": {
+    "raisonSociale": "SAS Les Foux d'Allos",
+    "capital": "71 400 € (capital variable)",
+    "rcs": "Manosque 528 901 705",
+    "siret": "528 901 705 00012",
+    "atoutFrance": "IM004180007",
+    "responsablesPublication": "Bruno Peri, Cécile Blas",
+    "garantFinancier": "GROUPAMA ASSURANCE-CRÉDIT & CAUTION, 8-10 rue d'Astorg, 75008 Paris, France",
+    "rcp": "GENERALI IARD, 2 rue Pillet-Will, 75009 Paris, France",
+    "hebergeur": "Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA",
+    "siren": "528 901 705",
+    "tva": "FR79 528 901 705",
+    "siege": "Lieudit La Sestrière – La Foux d'Allos, 04260 Allos",
+    "mediateur": ""
+  },
+  "pricing": {
+    "ete": {
+      "afficher": true,
+      "aPartirDe": "312",
+      "devise": "€",
+      "unite": "la semaine",
+      "mention": "selon dates, disponibilités et type d'appartement",
+      "statut": "reservation"
+    },
+    "hiver": {
+      "afficher": false,
+      "messageAttente": "Tarifs hiver bientôt disponibles — consultez nos disponibilités",
+      "statut": "disponibilites"
+    }
+  }
+}

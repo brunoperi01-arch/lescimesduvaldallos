@@ -1,0 +1,39 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  code-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "22", cache: "npm" }
+      - run: npm ci
+      - run: npm run validate:release
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: playwright-report/
+
+  neon-validation:
+    runs-on: ubuntu-latest
+    needs: code-validation
+    environment: neon-test
+    env:
+      ALLOW_DB_TESTS: "1"
+      TEST_DATABASE_ADMIN_URL: ${{ secrets.TEST_DATABASE_ADMIN_URL }}
+      TEST_DATABASE_URL: ${{ secrets.TEST_DATABASE_URL }}
+      TEST_DATABASE_MARKER: ${{ secrets.TEST_DATABASE_MARKER }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "22", cache: "npm" }
+      - run: npm ci
+      - name: Vérifier les secrets Neon obligatoires
+        run: |
+          test -n "$TEST_DATABASE_ADMIN_URL" || { echo "TEST_DATABASE_ADMIN_URL manquant"; exit 1; }
+          test -n "$TEST_DATABASE_URL" || { echo "TEST_DATABASE_URL manquant"; exit 1; }
+          test -n "$TEST_DATABASE_MARKER" || { echo "TEST_DATABASE_MARKER manquant"; exit 1; }
+      - run: npm run validate:neon
