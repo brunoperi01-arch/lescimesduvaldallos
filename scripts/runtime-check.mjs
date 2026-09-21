@@ -10,7 +10,7 @@ const client = new pg.Client({ connectionString: url });
 await client.connect();
 try {
   const q = await client.query(`select current_user as username,
-    r.rolsuper,
+    (select rolsuper from pg_catalog.pg_roles where rolname = current_user) as rolsuper,
     pg_has_role(current_user, 'cimes_app', 'member') as app_member,
     exists(select 1 from pg_catalog.pg_class c join pg_catalog.pg_roles o on o.oid=c.relowner
       where c.relnamespace='public'::regnamespace and o.rolname=current_user) as owns_app_object,

@@ -31,8 +31,8 @@ run("PostgreSQL réel — runtime, permissions et parcours CMS", () => {
       public.cimes_content_versions, public.cimes_content_drafts,
       public.cimes_published_content, public.cimes_admins restart identity cascade`);
   }
-  async function denied(sql, params = []) {
-    try { await runtime.query(sql, params); return null; } catch (e) { return e.code; }
+  async function denied(sql, params = [], client = runtime) {
+    try { await client.query(sql, params); return null; } catch (e) { return e.code; }
   }
 
   it("rôle runtime restreint et écritures directes refusées", async () => {
@@ -96,9 +96,9 @@ run("PostgreSQL réel — runtime, permissions et parcours CMS", () => {
 
   it("garde-fous 0005 : casse et espaces variables", async () => {
     for (const note of ["safeBOOKING", "54   places", "230\u00a0km", "TODO", "35 € animal"]) {
-      expect(await denied("select public.cimes_assert_publishable($1::jsonb)", [JSON.stringify({ ...valid, note })])).toBe("P0001");
+      expect(await denied("select public.cimes_assert_publishable($1::jsonb)", [JSON.stringify({ ...valid, note })], admin)).toBe("P0001");
     }
-    await expect(runtime.query("select public.cimes_assert_publishable($1::jsonb)", [JSON.stringify({ ...valid, note: "Texte public conforme" })])).resolves.toBeTruthy();
+    await expect(admin.query("select public.cimes_assert_publishable($1::jsonb)", [JSON.stringify({ ...valid, note: "Texte public conforme" })])).resolves.toBeTruthy();
   });
 
   it("rate limiting concurrent : e-mail et IP sérialisés", async () => {
