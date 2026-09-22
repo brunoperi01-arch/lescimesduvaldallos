@@ -10,10 +10,22 @@ export function createSessionHandler({ db, config }) {
       const s = await requireAdmin(db, req, config);
       if (!s) return unauthorized(res);
       return ok(res, { email: s.email, csrf: csrfForSession(s.sessionId, config) });
-    } catch { return serverError(res); }
+    } catch (error) {
+    const code = String(error?.code || error?.cause?.code || "UNKNOWN");
+    console.error("[auth/session]", {
+      code: /^[A-Z0-9_]{1,40}$/.test(code) ? code : "UNKNOWN"
+    });
+    return serverError(res);
+  }
   };
 }
 export default async function handler(req, res) {
-  let config; try { config = getConfig(); } catch { return serverError(res); }
+  let config; try { config = getConfig(); } catch (error) {
+    const code = String(error?.code || error?.cause?.code || "UNKNOWN");
+    console.error("[auth/session]", {
+      code: /^[A-Z0-9_]{1,40}$/.test(code) ? code : "UNKNOWN"
+    });
+    return serverError(res);
+  }
   return createSessionHandler({ db: neonDb, config })(req, res);
 }
