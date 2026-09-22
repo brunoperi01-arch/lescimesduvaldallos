@@ -12,7 +12,18 @@ export function createSessionHandler({ db, config }) {
       return ok(res, { email: s.email, csrf: csrfForSession(s.sessionId, config) });
     } catch (error) {
     const code = String(error?.code || error?.cause?.code || "UNKNOWN");
+    let message = String(error?.message || "Sans message");
+    for (const value of Object.values(process.env)) {
+      if (typeof value === "string" && value.length >= 8) {
+        message = message.split(value).join("[MASQUÉ]");
+      }
+    }
+    message = message.replace(
+      /(?:https?|postgres(?:ql)?):\/\/[^\s"'<>]+/gi,
+      "[URL MASQUÉE]"
+    );
     console.error("[auth/session]", {
+      message: message.slice(0, 500),
       code: /^[A-Z0-9_]{1,40}$/.test(code) ? code : "UNKNOWN"
     });
     return serverError(res);
@@ -22,7 +33,18 @@ export function createSessionHandler({ db, config }) {
 export default async function handler(req, res) {
   let config; try { config = getConfig(); } catch (error) {
     const code = String(error?.code || error?.cause?.code || "UNKNOWN");
+    let message = String(error?.message || "Sans message");
+    for (const value of Object.values(process.env)) {
+      if (typeof value === "string" && value.length >= 8) {
+        message = message.split(value).join("[MASQUÉ]");
+      }
+    }
+    message = message.replace(
+      /(?:https?|postgres(?:ql)?):\/\/[^\s"'<>]+/gi,
+      "[URL MASQUÉE]"
+    );
     console.error("[auth/session]", {
+      message: message.slice(0, 500),
       code: /^[A-Z0-9_]{1,40}$/.test(code) ? code : "UNKNOWN"
     });
     return serverError(res);
