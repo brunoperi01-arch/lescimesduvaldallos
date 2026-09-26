@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useSeason } from "../context/SeasonContext";
 import Seo from "../components/Seo";
+import { homeSeo } from "../lib/siteSeo";
 import { Helmet } from "react-helmet-async";
 import { buildJsonLd } from "../lib/jsonld";
 import Hero from "../components/Hero";
@@ -18,7 +19,7 @@ export default function Home() {
   const { pathname } = useLocation();
   return (
     <>
-      <Seo title={`${content.residence.nom} — ${data.hero.titre}`} description={data.hero.sousTitre} path={pathname} image={data.hero.image || "/images/hero-hiver.jpg"} />
+      <Seo {...homeSeo(pathname)} path={pathname} image={data.hero.image || "/images/hero-hiver.jpg"} />
       <Helmet><script type="application/ld+json">{JSON.stringify(buildJsonLd(content, season))}</script></Helmet>
       <Hero />
       <BookingBar />

@@ -12,7 +12,7 @@ describe("buildJsonLd", () => {
     const ld = buildJsonLd(content, "ete");
     expect(ld.makesOffer.price).toBe(312);
     expect(ld.makesOffer.priceCurrency).toBe("EUR");
-    expect(ld.address.streetAddress).toContain("Sestrière");
+    expect(ld.address.streetAddress).toBe("La Foux d'Allos");
   });
   it("aucun Offer en hiver (prix masqué)", () => {
     expect(buildJsonLd(content, "hiver").makesOffer).toBeUndefined();

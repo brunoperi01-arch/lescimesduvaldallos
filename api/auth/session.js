@@ -7,12 +7,6 @@ export function createSessionHandler({ db, config }) {
   return async function handler(req, res) {
     try {
       if (req.method !== "GET") return methodNotAllowed(res, "GET");
-      const target = new URL(config.databaseUrl);
-      console.info("[db-target]", {
-        host: target.hostname,
-        database: target.pathname.slice(1),
-        user: target.username
-      });
       const s = await requireAdmin(db, req, config);
       if (!s) return unauthorized(res);
       return ok(res, { email: s.email, csrf: csrfForSession(s.sessionId, config) });
